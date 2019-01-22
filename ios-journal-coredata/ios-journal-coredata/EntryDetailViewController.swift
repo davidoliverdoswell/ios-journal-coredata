@@ -9,22 +9,35 @@
 import UIKit
 
 class EntryDetailViewController: UIViewController {
+    
+    
+    @IBOutlet weak var saveButton: UIBarButtonItem!
+    
+    @IBOutlet weak var entryTextField: UITextField!
+    
+    @IBOutlet weak var entryTextView: UITextView!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if (entryTextField.text?.isEmpty)! || entryTextView.text.isEmpty {
+            navigationItem.rightBarButtonItem = nil
+        } else {
+            navigationItem.rightBarButtonItem = self.saveButton
+        }
     }
-    */
-
+    
+    @IBAction func saveEntry(_ sender: Any) {
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       
+    }
 }

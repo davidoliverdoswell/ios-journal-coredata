@@ -33,7 +33,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZcW-ix-yUB">
                                                     <rect key="frame" x="0.0" y="0.0" width="327" height="20"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPo-Vz-fkm">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fPo-Vz-fkm">
                                                             <rect key="frame" x="0.0" y="0.0" width="277" height="20"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -41,9 +41,6 @@
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nrz-Mk-ho7">
                                                             <rect key="frame" x="285" y="0.0" width="42" height="20"/>
-                                                            <constraints>
-                                                                <constraint firstAttribute="width" constant="42" id="VP1-LC-A1G"/>
-                                                            </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -102,7 +99,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MV6-S1-TRk">
                                 <rect key="frame" x="16" y="136" width="343" height="281"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z0j-UI-wcl">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entry" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z0j-UI-wcl">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="Cj3-QR-ptN"/>
@@ -130,8 +127,17 @@
                         <viewLayoutGuide key="safeArea" id="9oX-2W-q9x"/>
                     </view>
                     <navigationItem key="navigationItem" id="WEm-X3-XXc">
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="bdz-7A-AeC"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="bdz-7A-AeC">
+                            <connections>
+                                <action selector="saveEntry:" destination="EKP-QS-fDg" id="sQa-Nr-d2B"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="entryTextField" destination="Z0j-UI-wcl" id="KHb-af-kdu"/>
+                        <outlet property="entryTextView" destination="0Hj-Us-F4Y" id="Xq3-Wz-Xba"/>
+                        <outlet property="saveButton" destination="bdz-7A-AeC" id="dcw-b9-Csb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cKK-l9-EFU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
