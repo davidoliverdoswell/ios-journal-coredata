@@ -66,20 +66,60 @@
 		4981F56921F7C16400E3CDCD /* ios-journal-coredata */ = {
 			isa = PBXGroup;
 			children = (
-				4981F56A21F7C16400E3CDCD /* AppDelegate.swift */,
-				4981F56E21F7C16400E3CDCD /* Main.storyboard */,
-				4981F58721F7D7CD00E3CDCD /* CoreDataStack.swift */,
+				4981F59621F9169D00E3CDCD /* Resources */,
+				4981F59421F9167000E3CDCD /* Model */,
+				4981F59521F9168D00E3CDCD /* Model Controller */,
+				4981F59821F916E300E3CDCD /* Views */,
+				4981F59721F916B700E3CDCD /* View Controllers */,
+			);
+			path = "ios-journal-coredata";
+			sourceTree = "<group>";
+		};
+		4981F59421F9167000E3CDCD /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				4981F58021F7C5D800E3CDCD /* Entry.xcdatamodeld */,
+				4981F58721F7D7CD00E3CDCD /* CoreDataStack.swift */,
 				4981F58921F7D8A700E3CDCD /* Entry+Convenience.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4981F59521F9168D00E3CDCD /* Model Controller */ = {
+			isa = PBXGroup;
+			children = (
 				4981F58B21F7DA9000E3CDCD /* EntryController.swift */,
-				4981F58321F7C81C00E3CDCD /* EntriesTableViewController.swift */,
-				4981F58521F7C85700E3CDCD /* EntryTableViewCell.swift */,
-				4981F57E21F7C59400E3CDCD /* EntryDetailViewController.swift */,
+			);
+			path = "Model Controller";
+			sourceTree = "<group>";
+		};
+		4981F59621F9169D00E3CDCD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4981F56A21F7C16400E3CDCD /* AppDelegate.swift */,
 				4981F57121F7C16500E3CDCD /* Assets.xcassets */,
+				4981F56E21F7C16400E3CDCD /* Main.storyboard */,
 				4981F57321F7C16500E3CDCD /* LaunchScreen.storyboard */,
 				4981F57621F7C16500E3CDCD /* Info.plist */,
 			);
-			path = "ios-journal-coredata";
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4981F59721F916B700E3CDCD /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				4981F58321F7C81C00E3CDCD /* EntriesTableViewController.swift */,
+				4981F57E21F7C59400E3CDCD /* EntryDetailViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		4981F59821F916E300E3CDCD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4981F58521F7C85700E3CDCD /* EntryTableViewCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -308,7 +348,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WEBVY2C5S6;
-				INFOPLIST_FILE = "ios-journal-coredata/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ios-journal-coredata/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -326,7 +366,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = WEBVY2C5S6;
-				INFOPLIST_FILE = "ios-journal-coredata/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/ios-journal-coredata/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

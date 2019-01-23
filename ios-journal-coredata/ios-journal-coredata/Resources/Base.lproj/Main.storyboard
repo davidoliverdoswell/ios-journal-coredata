@@ -67,6 +67,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="bodyTextLabel" destination="Lbx-7H-x8Y" id="jHR-kE-jii"/>
+                                    <outlet property="timestampLabel" destination="Nrz-Mk-ho7" id="3Bx-eY-imU"/>
+                                    <outlet property="titleLabel" destination="fPo-Vz-fkm" id="nNT-25-gNd"/>
                                     <segue destination="EKP-QS-fDg" kind="show" identifier="ShowDetail" id="scf-lx-l4q"/>
                                 </connections>
                             </tableViewCell>

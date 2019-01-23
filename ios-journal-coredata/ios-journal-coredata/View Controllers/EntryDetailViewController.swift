@@ -12,12 +12,9 @@ class EntryDetailViewController: UIViewController {
     
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
-    
     @IBOutlet weak var entryTextField: UITextField!
-    
     @IBOutlet weak var entryTextView: UITextView!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,6 +31,7 @@ class EntryDetailViewController: UIViewController {
     }
     
     @IBAction func saveEntry(_ sender: Any) {
+        
     }
     
     
