@@ -53,11 +53,11 @@ class EntriesTableViewController: UITableViewController {
         let destinationVC = segue.destination as! EntryDetailViewController
         if segue.identifier == "CreateEntry" {
             destinationVC.entryController = entryController
-        } else if segue.identifier == "ShowEntry" {
+        } else if segue.identifier == "ShowDetail" {
             let indexPath = tableView.indexPathForSelectedRow!
-            destinationVC.entry = entryController.entries[indexPath.row]
+            let entry = entryController.entries[indexPath.row]
+            destinationVC.entry = entry
         }
     }
-    
 
 }

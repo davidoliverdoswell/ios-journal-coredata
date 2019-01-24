@@ -16,12 +16,12 @@ class EntryDetailViewController: UIViewController {
         }
     }
     
-    
     var entryController: EntryController?
     
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var entryTextField: UITextField!
     @IBOutlet weak var entryTextView: UITextView!
+    @IBOutlet weak var prioritySegmentedControl: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,12 +31,6 @@ class EntryDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if (entryTextField.text?.isEmpty)! || entryTextView.text.isEmpty {
-            navigationItem.rightBarButtonItem = nil
-        } else {
-            navigationItem.rightBarButtonItem = self.saveButton
-        }
     }
     
     private func updateViews() {
@@ -48,14 +42,16 @@ class EntryDetailViewController: UIViewController {
     }
     
     @IBAction func saveEntry(_ sender: Any) {
+        
+        let priorityIndex = prioritySegmentedControl.selectedSegmentIndex
+        let mood = EntryPriority.allCases[priorityIndex]
+        
         guard let title = entryTextField.text, let body = entryTextField.text else { return }
         
-        guard let entry = entry else { return }
-        
-        if (entry.title?.isEmpty)! && (entry.bodyText?.isEmpty)! {
-            entryController?.create(with: title, bodyText: body, timestamp: Date(), identifier: UUID().uuidString)
+        if let entry = entry {
+            entryController?.update(entry: entry, title: title, bodyText: body, mood: mood.rawValue)
         } else {
-            entryController?.update(entry: entry, title: title, bodyText: body)
+             entryController?.create(with: title, bodyText: body, timestamp: Date(), identifier: UUID().uuidString, mood: mood.rawValue)
         }
         self.navigationController?.popViewController(animated: true)
     }

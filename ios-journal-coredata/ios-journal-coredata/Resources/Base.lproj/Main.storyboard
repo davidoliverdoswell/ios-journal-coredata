@@ -102,8 +102,16 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="MV6-S1-TRk">
                                 <rect key="frame" x="16" y="136" width="343" height="281"/>
                                 <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Ada-HU-gZp">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="29"/>
+                                        <segments>
+                                            <segment title="😀"/>
+                                            <segment title="😐"/>
+                                            <segment title="☹️"/>
+                                        </segments>
+                                    </segmentedControl>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Entry" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Z0j-UI-wcl">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                        <rect key="frame" x="0.0" y="36" width="343" height="44"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="44" id="Cj3-QR-ptN"/>
                                         </constraints>
@@ -112,7 +120,7 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0Hj-Us-F4Y">
-                                        <rect key="frame" x="0.0" y="52" width="343" height="229"/>
+                                        <rect key="frame" x="0.0" y="88" width="343" height="193"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -139,6 +147,7 @@
                     <connections>
                         <outlet property="entryTextField" destination="Z0j-UI-wcl" id="KHb-af-kdu"/>
                         <outlet property="entryTextView" destination="0Hj-Us-F4Y" id="Xq3-Wz-Xba"/>
+                        <outlet property="prioritySegmentedControl" destination="Ada-HU-gZp" id="eVT-Ll-BXI"/>
                         <outlet property="saveButton" destination="bdz-7A-AeC" id="dcw-b9-Csb"/>
                     </connections>
                 </viewController>
