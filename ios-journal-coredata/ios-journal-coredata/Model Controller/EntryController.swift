@@ -15,7 +15,7 @@ class EntryController {
         return loadFromPersistentStore()
     }
     
-    func create(with title: String, bodyText: String, timestamp: Date, identifier: String, mood: String = "😐") {
+    func create(with title: String, bodyText: String, timestamp: Date, identifier: String, mood: String) {
         
         let entry = Entry(title: title, bodyText: bodyText, timestamp: timestamp, identifier: identifier, mood: mood)
         

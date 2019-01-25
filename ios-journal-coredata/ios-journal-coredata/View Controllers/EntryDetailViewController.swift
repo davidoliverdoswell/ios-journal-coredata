@@ -39,6 +39,10 @@ class EntryDetailViewController: UIViewController {
         self.title = entry?.title ?? "Create Entry"
         entryTextField.text = entry?.title
         entryTextView.text = entry?.bodyText
+        
+        let priority = entry?.entryPriority ?? .happy
+        let priorityIndex = EntryPriority.allCases.index(of: priority)!
+        prioritySegmentedControl.selectedSegmentIndex = priorityIndex
     }
     
     @IBAction func saveEntry(_ sender: Any) {
@@ -46,7 +50,7 @@ class EntryDetailViewController: UIViewController {
         let priorityIndex = prioritySegmentedControl.selectedSegmentIndex
         let mood = EntryPriority.allCases[priorityIndex]
         
-        guard let title = entryTextField.text, let body = entryTextField.text else { return }
+        guard let title = entryTextField.text, let body = entryTextView.text else { return }
         
         if let entry = entry {
             entryController?.update(entry: entry, title: title, bodyText: body, mood: mood.rawValue)

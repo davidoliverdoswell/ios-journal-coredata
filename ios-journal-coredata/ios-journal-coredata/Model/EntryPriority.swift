@@ -15,3 +15,19 @@ enum EntryPriority: String, CaseIterable, Codable {
     case neutral = "😐"
     case sad = "☹️"
 }
+
+extension Entry {
+    
+    var entryPriority: EntryPriority {
+        
+        get {
+            return EntryPriority(rawValue: priority!) ?? .happy
+        }
+        
+        set {
+            priority = newValue.rawValue
+        }
+        
+    }
+    
+}
